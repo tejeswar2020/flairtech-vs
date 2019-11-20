@@ -11,3 +11,128 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+Link{
+  color:black;
+  text-decoration: none;
+}
+
+.shove:hover{
+  color:#517330 !important;
+}
+
+
+.icon{
+  padding:10px;
+  background: rgb(160, 160, 160);
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+.login-text{
+  font-weight: 10px;
+}
+.login-form,.nav-form{
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  width:400px;
+}
+.background-set{
+  background-image: url("./assets/company-background.jpg");
+  background-size:cover;
+  background-attachment: fixed;
+  height: 750px;
+}
+
+#nav_bar{
+  background-color: #353535;
+}
+
+.create-user{
+  background: linear-gradient(rgba(22, 50, 234, 0.2), rgba(94, 245, 139, 0.788));
+}
+.link{
+  text-decoration: none;
+  color:black;
+}
+.link:hover{
+  text-decoration: none;
+  color:black;
+}
+.admin-man-items{
+  width: 900px;
+  background-color: rgba(236, 235, 235, 0.678);
+}
+@media screen and (max-width:600px){
+  .login-form,.nav-form{
+    width:80%;
+  }
+}
+.widthsetter{
+  width:800px;
+}
+
+@media screen and (max-width:700px){
+  .widthsetter{
+    width: 90%;
+  }
+   .admin-man-items{
+     width:95%;
+   }
+}
+
+
+.btn{
+  margin-top: 6px;
+  
+
+}
+.btn-sm{
+  background-color:#353535;
+}
+
+.login-page{
+  width: 100%;
+  margin:460px;
+  position: relative;;
+  max-width:330px;
+  padding:15px;
+  margin-top:180px;
+  height:100%;
+   /* border:2px solid black;  */
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+.psw{
+  margin-right:10px;
+  
+}
+.cancelbtn{
+  margin-top: 6px;
+  background-color: #353535;
+  
+
+}
+
+.newlabelstyle{
+  display: block;
+width: 100%;
+height: calc(1.5em + .75rem + 2px);
+padding: .375rem .75rem;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+color:
+#495057;
+background-color:
+#fff;
+background-clip: padding-box;
+border: 1px solid
+#ced4da;
+border-radius: .25rem;
+transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#sendLink{
+  display: none;
+}
