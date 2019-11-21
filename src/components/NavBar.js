@@ -21,7 +21,9 @@ import {withRouter,Redirect} from 'react-router-dom'
 class Example extends React.Component {
   
   state={
-    user:null
+    user:null,
+    profile:"",
+    email:""
   }
   componentDidMount(){
     this.authListener()
@@ -29,8 +31,12 @@ class Example extends React.Component {
   authListener=()=>{
     fire.auth().onAuthStateChanged((user)=>{
       if(user){
-        console.log(user)
+        console.log(user.email)
       this.setState({user:user})
+      fire.firestore().collection("Users").doc(user.email).get().then(snap=>{
+        this.setState({profile:snap.data().imageURL})
+        this.setState({email:user.email})
+      })
       }
       else if(user==null&&this.props.history.location.pathname.match("/dashboard/adminmanagement/postform/")){
         console.log("yes");
@@ -58,7 +64,7 @@ class Example extends React.Component {
     <div>
       {/* {this.state.user?(<AfterLogin logOut={this.logOut}/>):(<BeforeLogin/>)}  */}
      
-     <AfterLogin logOut={this.logOut} user={this.state.user}/>
+     <AfterLogin email={this.state.email} profile={this.state.profile} logOut={this.logOut} user={this.state.user}/>
       
     </div>
   );

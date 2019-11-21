@@ -16,12 +16,12 @@ import {
     DropdownItem } from 'reactstrap';
     import Logo from '../assets/logo.png'
 function AfterLogin(props) {
-    const {logOut,user}=props
+    const {logOut,user,profile,email}=props
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     return (
         <div>
-            <Navbar color="light" light expand="md">
+            <Navbar  className="navset" light expand="md">
         <NavbarBrand href="/dashboard"><img src={Logo} height="80"/></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -42,11 +42,12 @@ function AfterLogin(props) {
               <Link to="/dashboard/discussions" className="nav-link shove"><NavItem className="m-2 p-2">Discussions</NavItem></Link>
             
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle className="m-2 p-3" nav caret>
-                Console
+              <DropdownToggle className="userinfo rounded"  nav>
+                
+                <span><img src={profile} height="60"  className="userinfo"/></span>
               </DropdownToggle>
               <DropdownMenu right>
-                
+                <DropdownItem><span className="ml-2 mr-2">{email}</span></DropdownItem>
                 <Link to="/dashboard/adminmanagement" className="nav-link shove"><DropdownItem>Admin Management</DropdownItem></Link>
                 
                 

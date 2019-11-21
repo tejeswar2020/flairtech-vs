@@ -1,9 +1,15 @@
 import React from 'react'
 import $ from 'jquery'
 import fire from '../../Firebase/firebase'
-import {Form,FormGroup,Label,Input} from 'reactstrap'
+import {Form,FormGroup,Label,Input,Progress} from 'reactstrap'
+import FileUploader from 'react-firebase-file-uploader'
 class UserForm extends React.Component{
     state={
+        avatar: "",
+        upload:false,
+        isUploading: false,
+        progress: 0,
+        avatarURL: null,
         passMatch1:"",
         passMatch2:"",
         password:"",
@@ -130,8 +136,18 @@ class UserForm extends React.Component{
                 file:this.state.WA_FILE
     }
         // fire.firestore().collection("UserTemplate").get().then(doc=>console.log(doc.data()))
-       
-        fire.auth().createUserWithEmailAndPassword(this.props.email,this.state.password).then(
+        if(this.state.avatarURL){
+            fire.firestore().collection("Users").doc(this.props.email).update({
+                workauth,
+                employmenthistory,
+                emergencycontact,
+                malilingaddress,
+                personal,
+            }).then(
+               console.log("updated")
+            )
+        }
+        else{
             fire.firestore().collection("Users").doc(this.props.email).set({
                 workauth,
                 employmenthistory,
@@ -139,21 +155,63 @@ class UserForm extends React.Component{
                 malilingaddress,
                 personal,
             }).then(
-                fire.firestore().collection("sendEmailVerify").doc(this.props.email).set({
-                    status:true
-                })
-            )
+                console.log("set")
 
-            
+            )
+        }
+        
+        fire.firestore().collection("sendEmailVerify").doc(this.props.email).set({
+            status:true
+        })
+        fire.auth().createUserWithEmailAndPassword(this.props.email,this.state.password).then(
+            console.log("User Created successfully")
         )
         .catch((error)=>console.log(error))
         
        
     }   
     }
+
+    handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
+    handleProgress = progress => this.setState({ progress });
+    handleUploadError = error => {
+      this.setState({ isUploading: false });
+      console.error(error);
+    };
+    handleUploadSuccess = filename => {
+      this.setState({ avatar: filename, progress: 100,isUploading:false});
+      fire
+        .storage()
+        .ref("images")
+        .child(filename)
+        .getDownloadURL()
+        .then(url => {
+            this.setState({ avatarURL: url,upload:true});
+            fire.firestore().collection("Users").doc(this.props.email).set({
+                imageURL:this.state.avatarURL
+            })
+    });
+    };
     render(){
         return(
              <Form className="widthsetter p-4 bg-light m-5 rounded shadow ml-auto mr-auto">
+                 <div className="text-center">
+                 {this.state.isUploading?<Progress animated striped color="success" className="" value={this.state.progress} />:<p></p>}
+                 <div>
+                 {this.state.avatarURL && <img height="150" className="rounded" src={this.state.avatarURL} />}
+                 </div>
+               
+                <FileUploader
+                    accept="image/*"
+                    name={this.props.email}
+                    randomizeFilename
+                    storageRef={fire.storage().ref("images")}
+                    onUploadStart={this.handleUploadStart}
+                    onUploadError={this.handleUploadError}
+                    onUploadSuccess={this.handleUploadSuccess}
+                    onProgress={this.handleProgress}
+                />
+                 </div>
                 <div id="placeit" className="w ml-auto mr-auto">
                     
                 </div>
