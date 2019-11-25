@@ -33,7 +33,7 @@ class Container extends Component {
         return (
             <div>
                 <Presentation />
-                <button className="btn btn-primary" onClick={this.clickFun}>Dhana shrija</button>
+                <button className="btn btn-primary" onClick={this.clickFun}>Token</button>
             </div>
         )
     }
