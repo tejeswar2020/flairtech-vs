@@ -30,7 +30,7 @@ function TogglePersonal(){
             <Col>
               <CustomProfile
                 label="Line1"
-                id="b_line1"
+                id="MA_LINE1"
                 placeholder=""
                 name="MA_LINE1"
               />
@@ -38,7 +38,7 @@ function TogglePersonal(){
             <Col>
               <CustomProfile
                 label="Line2"
-                id="b_line2"
+                id="MA_LINE2"
                 placeholder=""
                 name="MA_LINE2"
               />
@@ -48,7 +48,7 @@ function TogglePersonal(){
             <Col>
               <CustomProfile
                 label="City"
-                id="b_city"
+                id="MA_CITY"
                 placeholder=""
                 name="MA_CITY"
               />
@@ -56,7 +56,7 @@ function TogglePersonal(){
             <Col>
               <CustomProfile
                 label="State"
-                id="b_state"
+                id="MA_STATE"
                 placeholder=""
                 name="MA_STATE"
               />
@@ -66,7 +66,7 @@ function TogglePersonal(){
             <Col>
               <CustomProfile
                 label="Zip"
-                id="b_zip"
+                id="MA_ZIP"
                 placeholder=""
                 name="MA_ZIP"
               />
@@ -74,7 +74,7 @@ function TogglePersonal(){
             <Col>
               <CustomProfile
                 label="Country"
-                id="b_country"
+                id="MA_COUNTRY"
                 placeholder=""
                 name="MA_COUNTRY"
               />
@@ -84,7 +84,7 @@ function TogglePersonal(){
             <Col>
               <CustomProfile
                 label="From"
-                id="b_from"
+                id="MA_FROM"
                 placeholder=""
                 name="MA_FROM"
               />
@@ -92,7 +92,7 @@ function TogglePersonal(){
             <Col>
               <CustomProfile
                 label="To"
-                id="b_to"
+                id="MA_TO"
                 placeholder=""
                 name="MA_TO"
               />

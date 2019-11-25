@@ -17,7 +17,7 @@ function Presentation(props) {
             <Card body className="text-center w-75 ml-auto mr-auto mt-4">
             <CardTitle>Do you want to send previous template or create a new one?</CardTitle>
             <Button onClick={placeOld} className="w-50 ml-auto mr-auto">Old Template</Button>
-            <Link to="/dashboard/adminmanagement/createtemplate"><Button className="w-50">Create New template</Button></Link>
+            <Link to="/dashboard/adminconsole/createtemplate"><Button className="w-50">Create New template</Button></Link>
              </Card>
             </div>
             <div id="createbtn" className="ml-auto">

@@ -28,12 +28,12 @@ function Profile() {
         <Form>
           <Row>
             <Col>
-              <CustomProfile label="Client" id="client" placeholder="" name="EH_CLIENT" handleChange={handleChange}/>
+              <CustomProfile label="Client" id="EH_CLIENT" placeholder="" name="EH_CLIENT" handleChange={handleChange}/>
             </Col>
             <Col>
               <CustomProfile
                 label="Client Address"
-                id="clientaddress"
+                id="EH_CLIENTADD"
                 name="EH_CLIENTADD"
                 placeholder=""
                 handleChange={handleChange}
@@ -44,7 +44,7 @@ function Profile() {
             <Col>
               <CustomProfile
                 label="Your working Client Email"
-                id="clientmail"
+                id="EH_CLIENTMAIL"
                 name="EH_CLIENTMAIL"
                 placeholder=""
                 handleChange={handleChange}
@@ -53,7 +53,7 @@ function Profile() {
             <Col>
               <CustomProfile
                 label="Vendor Name"
-                id="vendorname"
+                id="EH_VENDORNAME"
                 name="EH_VENDORNAME"
                 placeholder=""
                 handleChange={handleChange}
@@ -64,7 +64,7 @@ function Profile() {
             <Col>
               <CustomProfile
                 label="Vendor Phone"
-                id="vendorphone"
+                id="EH_VENDORPHONE"
                 name="EH_VENDORPHONE"
                 placeholder=""
                 handleChange={handleChange}
@@ -73,7 +73,7 @@ function Profile() {
             <Col>
               <CustomProfile
                 label="Vendor Mail"
-                id="vendormail"
+                id="EH_VENDORMAIL"
                 name="EH_VENDORMAIL"
                 placeholder=""
                 handleChange={handleChange}
@@ -82,10 +82,10 @@ function Profile() {
           </Row>
           <Row>
             <Col>
-              <CustomProfile label="From" id="vendorfrom" name="EH_VENDORFROM" placeholder="" handleChange={handleChange}/>
+              <CustomProfile label="From" id="EH_FROM" name="EH_VENDORFROM" placeholder="" handleChange={handleChange}/>
             </Col>
             <Col>
-              <CustomProfile label="To" id="vendorto" name="EH_VENDORTO" placeholder="" handleChange={handleChange}/>
+              <CustomProfile label="To" id="EH_TO" name="EH_VENDORTO" placeholder="" handleChange={handleChange}/>
             </Col>
           </Row>
           <div id="employmentAppendBlock">

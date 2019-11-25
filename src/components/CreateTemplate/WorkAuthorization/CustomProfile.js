@@ -8,7 +8,7 @@ function PersonalData(props){
     <Input
       type="text"
       placeholder={placeholder}
-      id={id}
+      id={"b_"+id}
       name={name}
       onChange={handleChange}
     />

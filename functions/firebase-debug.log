@@ -1,0 +1,93 @@
+[debug] [2019-11-24T11:41:09.256Z] ----------------------------------------------------------------------
+[debug] [2019-11-24T11:41:09.259Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ESWAR\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-11-24T11:41:09.259Z] CLI Version:   7.8.1
+[debug] [2019-11-24T11:41:09.259Z] Platform:      win32
+[debug] [2019-11-24T11:41:09.259Z] Node Version:  v12.13.0
+[debug] [2019-11-24T11:41:09.261Z] Time:          Sun Nov 24 2019 17:11:09 GMT+0530 (India Standard Time)
+[debug] [2019-11-24T11:41:09.261Z] ----------------------------------------------------------------------
+[debug] [2019-11-24T11:41:09.261Z] 
+[debug] [2019-11-24T11:41:09.276Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-24T11:41:09.278Z] > authorizing via signed-in user
+[debug] [2019-11-24T11:41:09.278Z] [iam] checking project flair-d7b59 for permissions ["firebase.projects.get"]
+[debug] [2019-11-24T11:41:09.281Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/flair-d7b59:testIamPermissions  
+
+[debug] [2019-11-24T11:41:11.343Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-24T11:41:11.353Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/flair-d7b59  
+ 
+[debug] [2019-11-24T11:41:12.396Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\ESWAR\firebase_Practise\flair-2'...
+[info] 
+[debug] [2019-11-24T11:41:12.412Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/flair-d7b59/webApps/-/config  
+ 
+[debug] [2019-11-24T11:41:13.740Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: build
+[info] +  hosting: Local server: http://localhost:5000
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[info] +  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "C:\Users\ESWAR\firebase_Practise\flair-2\functions" for Cloud Functions...
+[debug] [2019-11-24T11:41:15.240Z] [worker-~diagnostic~-aa9b0283-ea2e-421f-b3cb-0377ccdc2c00]: Assigning socketPath: \\?\pipe\C:\Users\ESWAR\firebase_Practise\flair-2\functions\16936
+[debug] [2019-11-24T11:41:15.241Z] [worker-~diagnostic~-aa9b0283-ea2e-421f-b3cb-0377ccdc2c00]: BUSY
+[debug] [2019-11-24T11:41:17.334Z] [runtime-status] [16936] Functions runtime initialized. {"cwd":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions","node_version":"12.13.0"}
+[debug] [2019-11-24T11:41:17.336Z] [runtime-status] [16936] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2019-11-24T11:41:17.351Z] [runtime-status] [16936] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.7.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-24T11:41:17.359Z] [runtime-status] [16936] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-24T11:41:17.363Z] [runtime-status] [16936] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] +  functions[api]: http function initialized (http://localhost:5001/flair-d7b59/us-central1/api).
+[debug] [2019-11-24T11:41:18.266Z] [worker-~diagnostic~-aa9b0283-ea2e-421f-b3cb-0377ccdc2c00]: exited
+[debug] [2019-11-24T11:41:18.266Z] [worker-~diagnostic~-aa9b0283-ea2e-421f-b3cb-0377ccdc2c00]: FINISHED
+[debug] [2019-11-24T11:52:27.302Z] Accepted request POST /flair-d7b59/us-central1/api --> api
+[debug] [2019-11-24T11:52:27.417Z] [worker-api-36fe5d42-50a0-44eb-89be-c4657af3aa71]: Assigning socketPath: \\?\pipe\C:\Users\ESWAR\firebase_Practise\flair-2\functions\17996
+[debug] [2019-11-24T11:52:27.418Z] [worker-api-36fe5d42-50a0-44eb-89be-c4657af3aa71]: BUSY
+[debug] [2019-11-24T11:52:32.801Z] [runtime-status] [17996] Functions runtime initialized. {"cwd":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions","node_version":"12.13.0"}
+[debug] [2019-11-24T11:52:32.812Z] [runtime-status] [17996] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2019-11-24T11:52:32.871Z] [runtime-status] [17996] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.7.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-24T11:52:32.897Z] [runtime-status] [17996] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-24T11:52:32.905Z] [runtime-status] [17996] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-24T11:52:35.652Z] [runtime-status] [17996] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2019-11-24T11:52:35.656Z] [runtime-status] [17996] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2019-11-24T11:52:35.656Z] [runtime-status] [17996] Running api in mode HTTPS
+[debug] [2019-11-24T11:52:35.682Z] [runtime-status] [17996] Attempting to listen to socketPath: \\?\pipe\C:\Users\ESWAR\firebase_Practise\flair-2\functions\17996
+[debug] [2019-11-24T11:52:35.728Z] [functions] Runtime ready! Sending request!
+[debug] [2019-11-24T11:52:35.976Z] [runtime-status] [17996] Ephemeral server handling POST request
+[debug] [2019-11-24T11:52:35.997Z] [runtime-status] [17996] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2019-11-24T11:52:36.006Z] [worker-api-36fe5d42-50a0-44eb-89be-c4657af3aa71]: IDLE
+[debug] [2019-11-24T12:23:45.703Z] File C:\Users\ESWAR\firebase_Practise\flair-2\functions\index.js changed, reloading triggers
+[debug] [2019-11-24T12:23:46.801Z] [worker-pool]: Shutting down IDLE worker (api)
+[debug] [2019-11-24T12:23:47.123Z] [worker-~diagnostic~-102d4fce-533c-41a0-8762-683014703261]: Assigning socketPath: \\?\pipe\C:\Users\ESWAR\firebase_Practise\flair-2\functions\8656
+[debug] [2019-11-24T12:23:47.123Z] [worker-~diagnostic~-102d4fce-533c-41a0-8762-683014703261]: BUSY
+[debug] [2019-11-24T12:23:47.124Z] [worker-api-36fe5d42-50a0-44eb-89be-c4657af3aa71]: exited
+[debug] [2019-11-24T12:23:47.124Z] [worker-api-36fe5d42-50a0-44eb-89be-c4657af3aa71]: FINISHED
+[debug] [2019-11-24T12:23:57.167Z] [runtime-status] [8656] Functions runtime initialized. {"cwd":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions","node_version":"12.13.0"}
+[debug] [2019-11-24T12:23:57.176Z] [runtime-status] [8656] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2019-11-24T12:23:57.221Z] [runtime-status] [8656] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.7.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-24T12:23:57.260Z] [runtime-status] [8656] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-24T12:23:57.266Z] [runtime-status] [8656] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-24T12:24:04.955Z] [worker-~diagnostic~-102d4fce-533c-41a0-8762-683014703261]: exited
+[debug] [2019-11-24T12:24:04.955Z] [worker-~diagnostic~-102d4fce-533c-41a0-8762-683014703261]: FINISHED
+[debug] [2019-11-24T12:48:32.864Z] File C:\Users\ESWAR\firebase_Practise\flair-2\functions\index.js changed, reloading triggers
+[debug] [2019-11-24T12:48:33.026Z] File C:\Users\ESWAR\firebase_Practise\flair-2\functions\index.js changed, reloading triggers
+[debug] [2019-11-24T12:48:34.306Z] [worker-~diagnostic~-93dbf3dd-af14-492e-bc61-86ba141f0824]: Assigning socketPath: \\?\pipe\C:\Users\ESWAR\firebase_Practise\flair-2\functions\22100
+[debug] [2019-11-24T12:48:34.307Z] [worker-~diagnostic~-93dbf3dd-af14-492e-bc61-86ba141f0824]: BUSY
+[debug] [2019-11-24T12:48:36.042Z] [runtime-status] [22100] Functions runtime initialized. {"cwd":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions","node_version":"12.13.0"}
+[debug] [2019-11-24T12:48:36.045Z] [runtime-status] [22100] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2019-11-24T12:48:36.055Z] [runtime-status] [22100] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.7.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-24T12:48:36.063Z] [runtime-status] [22100] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-24T12:48:36.067Z] [runtime-status] [22100] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] +  functions[addManagerRole]: http function initialized (http://localhost:5001/flair-d7b59/us-central1/addManagerRole).
+[debug] [2019-11-24T12:48:36.752Z] [worker-~diagnostic~-93dbf3dd-af14-492e-bc61-86ba141f0824]: exited
+[debug] [2019-11-24T12:48:36.753Z] [worker-~diagnostic~-93dbf3dd-af14-492e-bc61-86ba141f0824]: FINISHED
+[debug] [2019-11-24T13:19:11.155Z] File C:\Users\ESWAR\firebase_Practise\flair-2\functions\index.js changed, reloading triggers
+[debug] [2019-11-24T13:19:11.256Z] File C:\Users\ESWAR\firebase_Practise\flair-2\functions\index.js changed, reloading triggers
+[debug] [2019-11-24T13:19:12.481Z] [worker-~diagnostic~-65baab2f-c463-456a-8e56-34415c9b8e4f]: Assigning socketPath: \\?\pipe\C:\Users\ESWAR\firebase_Practise\flair-2\functions\22152
+[debug] [2019-11-24T13:19:12.482Z] [worker-~diagnostic~-65baab2f-c463-456a-8e56-34415c9b8e4f]: BUSY
+[debug] [2019-11-24T13:19:18.276Z] [runtime-status] [22152] Functions runtime initialized. {"cwd":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions","node_version":"12.13.0"}
+[debug] [2019-11-24T13:19:18.277Z] [runtime-status] [22152] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2019-11-24T13:19:18.359Z] [runtime-status] [22152] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.7.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-24T13:19:18.360Z] [runtime-status] [22152] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-24T13:19:18.364Z] [runtime-status] [22152] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\ESWAR\\firebase_Practise\\flair-2\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] +  functions[addAdminRole]: http function initialized (http://localhost:5001/flair-d7b59/us-central1/addAdminRole).
+[debug] [2019-11-24T13:19:19.369Z] [worker-~diagnostic~-65baab2f-c463-456a-8e56-34415c9b8e4f]: exited
+[debug] [2019-11-24T13:19:19.370Z] [worker-~diagnostic~-65baab2f-c463-456a-8e56-34415c9b8e4f]: FINISHED

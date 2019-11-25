@@ -20,13 +20,20 @@ class Container extends Component {
           })
     }
 
+    clickFun=()=>{
+        const addManager=firebase.functions().httpsCallable("addAdminRole");
+        addManager({email:"eshwarnadh345@gmail.com"}).then(res=>{
+            console.log(res)
+        })
+    }
+
  
     render() {
         
         return (
             <div>
                 <Presentation />
-               
+                <button className="btn btn-primary" onClick={this.clickFun}>Dhana shrija</button>
             </div>
         )
     }

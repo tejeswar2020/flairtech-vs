@@ -51,13 +51,13 @@ function Profile(){
             <Col>
             <FormGroup id="WA_issuedate">
             <Label htmlFor="WAb_issuedate">Issue Date:</Label>
-            <input type="date" className="rounded" name="WA_ISSUEDATE" handleChange={handleChange} id="WAb_issuedate"/>   
+            <input type="date" className="rounded" name="WA_ISSUEDATE" handleChange={handleChange} id="b_WAb_issuedate"/>   
             </FormGroup>
             </Col>
             <Col>
             <FormGroup id="WA_expdate">
             <Label htmlFor="WAb_expdate">Exp Date:</Label>
-            <input type="date" className="rounded" name="WA_EXPDATE" handleChange={handleChange} id="WAb_expdate"/>   
+            <input type="date" className="rounded" name="WA_EXPDATE" handleChange={handleChange} id="b_WAb_expdate"/>   
             </FormGroup>
 
             </Col>
@@ -107,8 +107,8 @@ function Profile(){
           <Row>
             <Col>
             <FormGroup id="WAfile">
-            <Label for="file">File Browser</Label>
-            <CustomInput type="file" id="file" handleChange={handleChange} name="WA_FILE" />
+            <Label for="WA_file">File Browser</Label>
+            <CustomInput type="file" id="WA_file" handleChange={handleChange} name="WA_FILE" />
             </FormGroup>
             </Col>
             <Col>

@@ -88,11 +88,9 @@ function TogglePersonal(props){
               <FormGroup>
                 <Label for="b_depart">Department</Label>
                 <Input type="select" name="PI_department"  id="PIb_depart" onChange={handleChange}>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                  <option>Java</option>
+                  <option>DevOps/Cloud</option>
+                  <option>Python</option>
                 </Input>
               </FormGroup>
             </Col>
@@ -114,11 +112,8 @@ function TogglePersonal(props){
               <FormGroup id="b_reportM">
                 <Label for="b_report">Reporting Manager</Label>
                 <Input type="select" name="PI_report"   id="PIb_report" onChange={handleChange}>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                  <option>Siva Harsha T</option>
+                  <option>Teja V</option>
                 </Input>
               </FormGroup>
             </Col>
@@ -126,11 +121,8 @@ function TogglePersonal(props){
               <FormGroup id="b_branch">
                 <Label for="b_branch">Branch</Label>
                 <Input type="select" name="PI_branch"   id="PIb_branch" onChange={handleChange}>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                  <option>Atlanta</option>
+                  <option>--</option>
                 </Input>
               </FormGroup>
             </Col>
@@ -138,7 +130,7 @@ function TogglePersonal(props){
           <Row>
             <Col>
               <FormGroup id="b_emp">
-                <Label for="b_employ">Branch</Label>
+                <Label for="b_employ">Employee Status</Label>
                 <Input type="select" name="PI_employment"   id="PIb_employ" onChange={handleChange}>
                   <option>Active</option>
                   <option>Inactive</option>

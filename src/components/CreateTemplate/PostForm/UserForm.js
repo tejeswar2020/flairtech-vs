@@ -3,8 +3,11 @@ import $ from 'jquery'
 import fire from '../../Firebase/firebase'
 import {Form,FormGroup,Label,Input,Progress} from 'reactstrap'
 import FileUploader from 'react-firebase-file-uploader'
+import { parse } from 'path'
 class UserForm extends React.Component{
     state={
+        currID:"",
+        veridicID:"",
         avatar: "",
         upload:false,
         isUploading: false,
@@ -67,107 +70,151 @@ class UserForm extends React.Component{
         if(e.target.value!=setP){
             this.setState({passMatch1:false})
         }
-        else {this.setState({passMatch1:true})}
+        else {
+            this.setState({passMatch1:true})
+            this.setState({password:$("#setPassword").val()})
+        }
     }
     handleChange2=(e)=>{
         const setP=$("#setPassword").val();
         if(e.target.value!=setP){
             this.setState({passMatch2:false})
         }
-        else{ this.setState({passMatch2:true})}
+        else{ this.setState({passMatch2:true})
+        this.setState({password:$("#confirmPassword").val()})
+        }
     }
     Register=(e)=>{
-        
         e.preventDefault();
         console.log(this.state.password)
+        console.log("hello")
     if(($("#setPassword").val()!=$("#confirmPassword").val())||this.state.passwordLength<8){
         console.log("Passwords not match or min 8 length")
     }
     else{ 
-        this.setState({password:$("#setPassword").val()})
-     const personal={
-                firstname:$("#PIb_fname").val(),
-                middlename:$("#PIb_mname").val(),
-                lastname:this.state.PI_lname,
-                emailid:this.state.PI_email,
-                phonenumber:this.state.PI_phone,
-                department:this.state. PI_department,
-                jobtitle:this.state.PI_job,
-                reportingmanager:this.state.PI_report,
-                branch:this.state.PI_branch,
-                empolyeestatus:this.state.PI_employment,
-                maritalstatus:this.state.PI_marital,
-                role:this.state.PI_role,
-    }
-    const malilingaddress={
-                line1:this.state.MA_LINE1,
-                line2:this.state. MA_LINE2,
-                city:this.state.MA_CITY,
-                state:this.state.MA_STATE,
-                zip:this.state.MA_ZIP,
-                country:this.state.MA_COUNTRY,
-                from:this.state.MA_FROM,
-                to:this.state.MA_TO,
-    }
-    const emergencycontact={
-                name:this.state.EMC_name,
-                phone:this.state.EMC_phone,
-                emailid:this.state.EMC_mail,
-    }
-    const employmenthistory={
-                client:this.state.EH_CLIENT,
-                clientaddress:this.state.EH_CLIENTADD,
-                yourworkingmailid:this.state.EH_CLIENTMAIL,
-                vendorname:this.state.EH_VENDORNAME,
-                vendorphone:this.state.EH_VENDORPHONE,
-                vendoremail:this.state.EH_VENDORMAIL,
-                from:this.state.EH_VENDORFROM,
-                to:this.state.EH_VENDORTO,
-    }
+       
+        const personal={
+            firstname:$("#PIb_fname").val(),
+            middlename:$("#PIb_mname").val(),
+            lastname:$("#PIb_lname").val(),
+            emailid:$("#PIb_mail").val(),
+            phonenumber:$("#PIb_phone").val(),
+            department:$("#PIb_depart").val(), 
+            jobtitle:$("#PIb_jobTitle").val(),
+            reportingmanager:$("#PIb_report").val(),
+            branch:$("#PIb_branch").val(),
+            empolyeestatus:$("#PIb_employ").val(),
+            maritalstatus:$("#PIb_marital").val(),
+            role:$("#PIb_role").val(),
+            }
+            const mailingaddress={
+            line1:$("#b_MA_LINE1").val(),
+            line2:$("#b_MA_LINE2").val(),
+            city:$("#b_MA_CITY").val(),
+            state:$("#b_MA_STATE").val(),
+            zip:$("#b_MA_ZIP").val(),
+            country:$("#b_MA_COUNTRY").val(),
+            from:$("#b_MA_FROM").val(),
+            to:$("#b_MA_TO").val(),
+            }
+            const emergencycontact={
+            name:$("#EMCe_name").val(),
+            phone:$("#EMCe_phone").val(),
+            emailid:$("#EMCe_mail").val(),
+            }
+            const employmenthistory={
+            client:$("#b_EH_CLIENT").val(),
+            clientaddress:$("#b_EH_CLIENTADD").val(),
+            yourworkingmailid:$("#b_EH_CLIENTMAIL").val(),
+            vendorname:$("#b_EH_VENDORNAME").val(),
+            vendorphone:$("#b_EH_VENDORPHONE").val(),
+            vendoremail:$("#b_EH_VENDORMAIL").val(),
+            from:$("#b_EH_FROM").val(),
+            to:$("#b_EH_TO").val(),
+            }
+            var date = new Date($('#b_WAb_issuedate').val());
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+            let issueDate=[day,month,year].join('/')
+            var date2 = new Date($('#b_WAb_expdate').val());
+            let day2 = date2.getDate();
+            let month2 = date2.getMonth() + 1;
+            let year2 = date2.getFullYear();
+            let ExpDate=[day2,month2,year2].join('/')
+            const workauth={
+                work_type:$("#b_WAtype").val(),
+                work_number:$("#b_WAnum").val(),
+                work_issue:issueDate,
+                work_exp:ExpDate,
+                work_vendorphone:$("#b_WAvendorphone").val(),
+                work_vendormail:$("#b_WAvendormail").val(),
+                work_from:$("#b_WAfrom").val(),
+                work_to:$("#b_WAto").val(),
+                work_type:$("#b_WAtype").val(),
 
-    const workauth={
-                type:this.state.WA_TYPE,
-                number:this.state.WA_NUMBER,
-                issuedate:this.state.WA_ISSUEDATE,
-                expdate:this.state.WA_EXPDATE,
-                vendorphone:this.state.WA_VENDORPHONE,
-                vendormail:this.state.WA_FROM,
-                to:this.state.WA_TO,
-                file:this.state.WA_FILE
-    }
-        // fire.firestore().collection("UserTemplate").get().then(doc=>console.log(doc.data()))
-        if(this.state.avatarURL){
-            fire.firestore().collection("Users").doc(this.props.email).update({
-                workauth,
-                employmenthistory,
-                emergencycontact,
-                malilingaddress,
-                personal,
-            }).then(
-               console.log("updated")
-            )
-        }
-        else{
-            fire.firestore().collection("Users").doc(this.props.email).set({
-                workauth,
-                employmenthistory,
-                emergencycontact,
-                malilingaddress,
-                personal,
-            }).then(
-                console.log("set")
+            }
+            
+      
 
-            )
-        }
-        
-        fire.firestore().collection("sendEmailVerify").doc(this.props.email).set({
-            status:true
-        })
+            function AssignAsUser(usermail){
+                const addManager=fire.functions().httpsCallable("addAdminRole");
+            addManager({email:usermail}).then(res=>{
+                console.log(res)
+            })
+            }
+       
         fire.auth().createUserWithEmailAndPassword(this.props.email,this.state.password).then(
+            //status to true
+            fire.firestore().collection("sendEmailVerify").doc(this.props.email).set({
+                status:true
+            }),
+            //getting user info
+            fire.firestore().collection("Users").doc(this.props.email).set({
+                veridicID:"",
+                imageURL:"",
+                employeestatus:"bench",
+                useremail:this.props.email,
+                workauth,
+                employmenthistory,
+                emergencycontact,
+                mailingaddress,
+                personal,
+            }).then(
+               console.log("user info updated")
+            ),
+            //assigning as user
+            AssignAsUser(this.props.email)
+           ,
+
+            
+            //getting veridicID
+            fire.firestore().collection("IDstatus").doc("id").get().then(snap=>{
+                console.log(snap.data().veridicID)
+                let id=snap.data().veridicID.slice(3);
+                let spare=(parseInt(id)+1).toString();
+                let length=6-spare.length
+                for(let i=1;i<=length;i++){
+                    spare='0'+spare;
+                }
+                console.log(spare.toString())
+                localStorage.setItem("veridicID","VER"+spare)
+                fire.firestore().collection("IDstatus").doc("id").update({
+                    veridicID:localStorage.getItem("veridicID")
+                })
+     
+            }),
+            //updating veridicID to user
+            fire.firestore().collection("Users").doc(this.props.email).update({
+                veridicID:localStorage.getItem("veridicID")
+            }),
+            //updating picture to the user
+            fire.firestore().collection("Users").doc(this.props.email).update({
+                imageURL:this.state.avatarURL
+            }).then(console.log("Image is added to the user")),
             console.log("User Created successfully")
         )
-        .catch((error)=>console.log(error))
-        
+        .catch((error)=>console.log(error))  
        
     }   
     }
@@ -187,14 +234,12 @@ class UserForm extends React.Component{
         .getDownloadURL()
         .then(url => {
             this.setState({ avatarURL: url,upload:true});
-            fire.firestore().collection("Users").doc(this.props.email).set({
-                imageURL:this.state.avatarURL
-            })
+           
     });
     };
     render(){
         return(
-             <Form className="widthsetter p-4 bg-light m-5 rounded shadow ml-auto mr-auto">
+             <Form className="widthsetter p-4 bg-light m-5 rounded shadow ml-auto mr-auto" onSubmit={this.Register}>
                  <div className="text-center">
                  {this.state.isUploading?<Progress animated striped color="success" className="" value={this.state.progress} />:<p></p>}
                  <div>
@@ -225,7 +270,7 @@ class UserForm extends React.Component{
                     {this.state.passMatch1||this.state.passMatch2?<p className="text-success">Passwords match eachother</p>:<p className="text-danger">Passwords doesn't match</p>}
                    {this.state.passwordLength<8?<p className="text-danger">Minimum 8 characters needed</p>:<p></p>}
                 </FormGroup>
-                <button className="btn btn-primary w-50" onClick={this.Register} type="submit">Register</button>
+                <button className="btn btn-primary w-50"  type="submit">Register</button>
              </Form>
         )
     }

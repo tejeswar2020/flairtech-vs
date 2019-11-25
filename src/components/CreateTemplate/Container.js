@@ -112,7 +112,7 @@ fire.firestore().collection("sendEmailVerify").doc(userMail).set({
                               this.setState({
                                   empHistoryData:empHistory
                               })
-                              $("#employmentAppendBlock").append("<div id='"+customizeId+"'><label>"+newLabelName+"</label><br/><input type='"+newLableType+"' id="+newLabelName+" class='newlabelstyle' required/></div>");
+                              $("#employmentAppendBlock").append("<div id='"+customizeId+"'><label>"+newLabelName+"</label><br/><input type='"+newLableType+"' id='b_"+newLabelName+"' class='newlabelstyle' required/></div>");
                              
                                }
                                employementfunction();
@@ -146,7 +146,7 @@ fire.firestore().collection("sendEmailVerify").doc(userMail).set({
                               this.setState({
                                   mailAddressData:mailAdd
                               })
-                              $("#mailAppendBlock").append("<div id='"+customizeId+"'><label>"+newLabelName+"</label><br/><input type='"+newLableType+"' id='MA_"+newLabelName+"newlabel' class='newlabelstyle' required/></div>");
+                              $("#mailAppendBlock").append("<div id='"+customizeId+"'><label>"+newLabelName+"</label><br/><input type='"+newLableType+"' id='b_"+newLabelName+"' class='newlabelstyle' required/></div>");
                              
                               }                      
                             mailAddressfunction();

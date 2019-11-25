@@ -10,7 +10,7 @@ const CustomProfile = props => {
 
   return (
     <div>
-      <Button color="secondary" onClick={toggle} className="w-100 m-1">
+      <Button color="primary" onClick={toggle} className="w-100 m-1">
         {btnText}
       </Button>
       <Collapse isOpen={isOpen} className="m-1">
